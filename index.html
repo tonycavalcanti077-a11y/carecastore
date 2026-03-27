@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careca Store – Eletrônicos & Tech</title>
+<meta name="description" content="Loja virtual de eletrônicos e tecnologia com atendimento direto pelo WhatsApp. Smartwatch, câmeras, caixas de som, projetores, casa inteligente e mais.">
+<meta name="theme-color" content="#0a0a0f">
+<meta property="og:title" content="Careca Store – Eletrônicos & Tech">
+<meta property="og:description" content="Compre eletrônicos e tecnologia direto pelo WhatsApp com uma vitrine moderna, rápida e pronta para publicar.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--sur:#13131a;--card:#16161f;--ac:#00e5ff;--or:#ff6b00;--gr:#25D366;--tx:#f0f0f5;--mu:#7a7a9a;--bd:#232333}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Syne',sans-serif;background:var(--bg);color:var(--tx);overflow-x:hidden}
+
+/* HEADER */
+header{position:sticky;top:0;z-index:200;background:rgba(10,10,15,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;padding:0 4%;height:64px}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:3px;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--tx)}
+.logo em{color:var(--ac);font-style:normal}
+.dot{width:8px;height:8px;background:var(--or);border-radius:50%;animation:blink 1.5s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.1}}
+nav{display:flex;gap:1.6rem}
+nav a{color:var(--mu);text-decoration:none;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;transition:color .2s}
+nav a:hover{color:var(--ac)}
+.hwa{background:var(--gr);color:#fff;border:none;padding:9px 18px;border-radius:50px;font-family:'Syne',sans-serif;font-weight:700;font-size:.76rem;cursor:pointer;display:flex;align-items:center;gap:6px;text-decoration:none;transition:all .2s;white-space:nowrap}
+.hwa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.4)}
+@media(max-width:700px){nav{display:none}}
+
+/* HERO */
+.hero{min-height:86vh;display:flex;align-items:center;padding:40px 4% 60px;position:relative;overflow:hidden}
+.hbg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 85% 40%,rgba(0,229,255,.08) 0%,transparent 65%),radial-gradient(ellipse 50% 50% at 15% 80%,rgba(255,107,0,.06) 0%,transparent 60%)}
+.hgrid{position:absolute;inset:0;background-image:linear-gradient(var(--bd) 1px,transparent 1px),linear-gradient(90deg,var(--bd) 1px,transparent 1px);background-size:52px 52px;opacity:.22;mask-image:radial-gradient(ellipse at 60% 50%,black 20%,transparent 75%)}
+.hc{position:relative;z-index:2;max-width:580px}
+.htag{display:inline-flex;align-items:center;gap:8px;background:rgba(0,229,255,.1);border:1px solid rgba(0,229,255,.22);color:var(--ac);padding:6px 16px;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;animation:fu .5s ease both}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,8vw,6.5rem);line-height:.92;letter-spacing:2px;margin-bottom:20px;animation:fu .5s .1s ease both}
+.hero h1 .c1{color:var(--ac)}
+.hero h1 .c2{-webkit-text-stroke:2px var(--or);color:transparent}
+.hero p{color:var(--mu);font-size:.97rem;line-height:1.7;margin-bottom:30px;animation:fu .5s .2s ease both}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap;animation:fu .5s .3s ease both}
+.bm{background:var(--ac);color:var(--bg);border:none;padding:14px 28px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:800;font-size:.86rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .2s}
+.bm:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,229,255,.28)}
+.bw{background:var(--gr);color:#fff;border:none;padding:14px 28px;border-radius:10px;font-family:'Syne',sans-serif;font-weight:800;font-size:.86rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all .2s}
+.bw:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(37,211,102,.32)}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* STATS */
+.stats{background:var(--sur);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:20px 4%;display:flex;justify-content:space-around;flex-wrap:wrap;gap:14px}
+.sn{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:var(--ac);letter-spacing:2px}
+.sl{font-size:.7rem;color:var(--mu);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+
+/* SECTIONS */
+.sec{padding:60px 4%}
+.stag{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--or);margin-bottom:6px}
+.sti{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.7rem,4vw,2.8rem);letter-spacing:2px;margin-bottom:36px}
+
+/* CATS */
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.ci{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:18px 10px;text-align:center;cursor:pointer;transition:all .22s;text-decoration:none;color:var(--tx);display:block}
+.ci:hover{border-color:var(--ac);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,229,255,.1)}
+.ci .ic{font-size:1.7rem;margin-bottom:8px;display:block}
+.ci span{font-size:.7rem;font-weight:700}
+
+/* PRODUCT GRID */
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+
+.pc{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden;transition:all .28s;position:relative;cursor:pointer}
+.pc:hover{border-color:var(--ac);transform:translateY(-5px);box-shadow:0 18px 44px rgba(0,229,255,.1)}
+
+.bdg{position:absolute;top:10px;left:10px;z-index:3;font-size:.6rem;font-weight:800;letter-spacing:1px;padding:3px 9px;border-radius:50px;text-transform:uppercase}
+.bdg.hot{background:var(--or);color:#fff}
+.bdg.new{background:var(--ac);color:var(--bg)}
+.bdg.sale{background:#e91e63;color:#fff}
+
+/* PRODUCT IMAGE */
+.pi{width:100%;height:190px;overflow:hidden;position:relative;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.pi svg{width:100%;height:100%;transition:transform .35s ease}
+.pc:hover .pi svg{transform:scale(1.06)}
+.pi-ov{position:absolute;inset:0;background:rgba(0,0,0,0);display:flex;align-items:center;justify-content:center;opacity:0;transition:all .2s;z-index:2}
+.pc:hover .pi-ov{opacity:1;background:rgba(0,0,0,.38)}
+.pi-ov span{background:rgba(0,229,255,.92);color:#000;font-size:.68rem;font-weight:800;padding:7px 14px;border-radius:50px;letter-spacing:1px;pointer-events:none}
+
+.pinfo{padding:14px}
+.pct{font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--ac);margin-bottom:5px}
+.pnm{font-size:.85rem;font-weight:700;line-height:1.35;margin-bottom:9px;color:var(--tx)}
+.ppr{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.prn{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;color:var(--ac);letter-spacing:1px}
+.prw{font-size:.76rem;color:var(--mu);text-decoration:line-through}
+.wb{width:100%;background:var(--gr);color:#fff;border:none;padding:11px;border-radius:9px;font-family:'Syne',sans-serif;font-weight:700;font-size:.8rem;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;transition:all .2s}
+.wb:hover{background:#1ebe55;transform:translateY(-1px);box-shadow:0 8px 22px rgba(37,211,102,.32)}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:999;display:none;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:20px}
+.lb.on{display:flex;animation:lbin .18s ease}
+@keyframes lbin{from{opacity:0}to{opacity:1}}
+.lbx{position:fixed;top:16px;right:18px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;width:42px;height:42px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:1001}
+.lbx:hover{background:rgba(255,255,255,.22)}
+.lb-img{max-width:min(88vw,500px);max-height:55vh;border-radius:16px;overflow:hidden;box-shadow:0 0 50px rgba(0,229,255,.12)}
+.lb-img svg{width:100%;height:100%}
+.lb-nm{color:#fff;font-size:.92rem;font-weight:700;text-align:center;max-width:400px;line-height:1.4}
+.lb-pr{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;color:var(--ac);letter-spacing:2px}
+.lb-acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.lb-wab{background:var(--gr);color:#fff;border:none;padding:13px 28px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:800;font-size:.88rem;cursor:pointer;display:flex;align-items:center;gap:7px;text-decoration:none;transition:all .2s;min-width:200px;justify-content:center}
+.lb-wab:hover{background:#1ebe55;transform:translateY(-2px);box-shadow:0 10px 26px rgba(37,211,102,.38)}
+.lb-bk{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;padding:13px 24px;border-radius:11px;font-family:'Syne',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;transition:all .2s}
+.lb-bk:hover{background:rgba(255,255,255,.15)}
+
+/* PROMO BANNER */
+.promo{margin:0 4% 60px;padding:40px 4%;background:linear-gradient(135deg,#091d28 0%,#090d18 50%,#180900 100%);border:1px solid var(--bd);border-radius:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:22px;position:relative;overflow:hidden}
+.promo::before{content:'';position:absolute;top:-40%;right:-5%;width:360px;height:360px;background:radial-gradient(circle,rgba(0,229,255,.08) 0%,transparent 70%)}
+.ptx{position:relative;z-index:1}
+.ptag{font-size:.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--or);margin-bottom:7px}
+.pti{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,3.5vw,3rem);letter-spacing:2px;margin-bottom:8px}
+.pti span{color:var(--ac)}
+.psu{color:var(--mu);font-size:.88rem}
+
+/* FEATS */
+.feats{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px}
+.ft{background:var(--card);border:1px solid var(--bd);border-radius:13px;padding:22px;transition:border-color .2s}
+.ft:hover{border-color:var(--ac)}
+.fic{font-size:1.7rem;margin-bottom:12px}
+.ftt{font-size:.86rem;font-weight:800;margin-bottom:5px}
+.fds{font-size:.76rem;color:var(--mu);line-height:1.6}
+
+/* FOOTER */
+footer{background:var(--sur);border-top:1px solid var(--bd);padding:40px 4% 20px}
+.ftop{display:flex;justify-content:space-between;flex-wrap:wrap;gap:26px;margin-bottom:32px}
+.flo{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:3px;margin-bottom:9px}
+.flo em{color:var(--ac);font-style:normal}
+.fds2{color:var(--mu);font-size:.8rem;line-height:1.6;max-width:230px}
+.fl h4{font-size:.68rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--ac);margin-bottom:12px}
+.fl ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fl ul a{color:var(--mu);text-decoration:none;font-size:.8rem;transition:color .2s}
+.fl ul a:hover{color:var(--tx)}
+.fbot{border-top:1px solid var(--bd);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:9px}
+.fbot p{font-size:.73rem;color:var(--mu)}
+
+/* FLOAT WA */
+.fwa{position:fixed;bottom:24px;right:24px;z-index:300;background:var(--gr);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;text-decoration:none;box-shadow:0 8px 30px rgba(37,211,102,.5);animation:wap 2.5s infinite;transition:transform .2s}
+.fwa:hover{transform:scale(1.12)}
+@keyframes wap{0%,100%{box-shadow:0 8px 30px rgba(37,211,102,.5)}50%{box-shadow:0 8px 44px rgba(37,211,102,.85),0 0 0 12px rgba(37,211,102,.09)}}
+
+@media(max-width:600px){.pgrid{grid-template-columns:repeat(2,1fr)}.pi{height:150px}.lb-img{max-height:45vh}}
+
+/* BUSCA E FILTRO */
+.tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:0 0 22px}
+.search{flex:1 1 260px;display:flex;align-items:center;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:0 14px;min-height:48px}
+.search input{width:100%;background:transparent;border:none;outline:none;color:var(--tx);font-family:'Syne',sans-serif;font-size:.92rem}
+.search input::placeholder{color:var(--mu)}
+.select{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:0 14px;height:48px;color:var(--tx);font-family:'Syne',sans-serif;font-size:.92rem;outline:none}
+.count{font-size:.8rem;color:var(--mu);font-weight:700;letter-spacing:.5px}
+.empty{grid-column:1/-1;background:var(--card);border:1px dashed var(--bd);border-radius:16px;padding:26px;text-align:center;color:var(--mu);font-weight:700}
+
+/* VIDEOS */
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+.vc{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden;transition:all .25s}
+.vc:hover{transform:translateY(-4px);border-color:var(--ac);box-shadow:0 18px 44px rgba(0,229,255,.08)}
+.vc video{display:block;width:100%;aspect-ratio:16/9;background:#050507}
+.vinfo{padding:14px}
+.vtag{font-size:.65rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--or);margin-bottom:6px}
+.vnm{font-size:.92rem;font-weight:800;line-height:1.35;margin-bottom:7px}
+.vds{font-size:.78rem;color:var(--mu);line-height:1.55}
+.notice{margin-top:18px;font-size:.78rem;color:var(--mu);line-height:1.6}
+
+</style>
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <button class="lbx" onclick="clb()">✕</button>
+  <div class="lb-img" id="lb-img"></div>
+  <div class="lb-nm" id="lb-nm"></div>
+  <div class="lb-pr" id="lb-pr"></div>
+  <div class="lb-acts">
+    <a class="lb-wab" id="lb-wa" href="#" target="_blank">💬 Comprar pelo WhatsApp</a>
+    <button class="lb-bk" onclick="clb()">← Voltar à Loja</button>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">CARECA<em>STORE</em><div class="dot"></div></a>
+  <nav>
+    <a href="#categorias">Categorias</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#sobre">Sobre</a>
+  </nav>
+  <a href="https://wa.me/5521965077799?text=Olá!%20Vim%20pelo%20site%20Careca%20Store!" class="hwa" target="_blank">💬 (21) 96507-7799</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hbg"></div><div class="hgrid"></div>
+  <div class="hc">
+    <div class="htag">⚡ Eletrônicos & Tecnologia</div>
+    <h1>A MELHOR<br><span class="c1">TECH</span><br><span class="c2">DO RIO</span></h1>
+    <p>Smartwatch, Câmeras, Caixas de Som, Robô Aspirador, Projetor 4K e muito mais. Clique no produto e compre direto pelo WhatsApp!</p>
+    <div class="hbtns">
+      <a href="#produtos" class="bm">🔥 Ver Produtos</a>
+      <a href="https://wa.me/5521965077799?text=Olá!%20Quero%20conhecer%20os%20produtos!" class="bw" target="_blank">💬 Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div><div class="sn">500+</div><div class="sl">Clientes Felizes</div></div>
+  <div><div class="sn">50+</div><div class="sl">Produtos</div></div>
+  <div><div class="sn">24H</div><div class="sl">Atendimento</div></div>
+  <div><div class="sn">5★</div><div class="sl">Avaliação</div></div>
+</div>
+
+<!-- CATEGORIAS -->
+<section class="sec" id="categorias">
+  <div class="stag">● Navegue por</div>
+  <div class="sti">CATEGORIAS</div>
+  <div class="cats">
+    <a href="#produtos" class="ci"><span class="ic">⌚</span><span>Smartwatch</span></a>
+    <a href="#produtos" class="ci"><span class="ic">🔋</span><span>Power Bank</span></a>
+    <a href="#produtos" class="ci"><span class="ic">📷</span><span>Câmeras</span></a>
+    <a href="#produtos" class="ci"><span class="ic">🔊</span><span>Caixas de Som</span></a>
+    <a href="#produtos" class="ci"><span class="ic">🎧</span><span>Fones</span></a>
+    <a href="#produtos" class="ci"><span class="ic">🎥</span><span>Projetor 4K</span></a>
+    <a href="#produtos" class="ci"><span class="ic">🤖</span><span>Robô Aspirador</span></a>
+    <a href="#produtos" class="ci"><span class="ic">📺</span><span>TV & Antena</span></a>
+    <a href="#produtos" class="ci"><span class="ic">💾</span><span>Memória</span></a>
+    <a href="#produtos" class="ci"><span class="ic">🩺</span><span>Saúde</span></a>
+    <a href="#produtos" class="ci"><span class="ic">🐕</span><span>Pet</span></a>
+    <a href="#produtos" class="ci"><span class="ic">🏠</span><span>Casa Smart</span></a>
+    <a href="#produtos" class="ci"><span class="ic">🔧</span><span>Ferramentas</span></a>
+    <a href="#produtos" class="ci"><span class="ic">🍳</span><span>Cozinha</span></a>
+    <a href="#produtos" class="ci"><span class="ic">📡</span><span>Antena</span></a>
+    <a href="#produtos" class="ci"><span class="ic">💻</span><span>Informática</span></a>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="sec" id="produtos" style="padding-top:0">
+  <div class="stag">● Clique na imagem para ampliar · Botão verde para comprar no WhatsApp</div>
+  <div class="sti">TODOS OS PRODUTOS</div>
+  <div class="tools">
+    <label class="search" aria-label="Buscar produto">
+      <span style="margin-right:10px">🔎</span>
+      <input id="busca" type="text" placeholder="Buscar por nome, categoria ou palavra-chave">
+    </label>
+    <select id="filtro-cat" class="select" aria-label="Filtrar categoria">
+      <option value="">Todas as categorias</option>
+    </select>
+    <div class="count" id="contador">0 produtos</div>
+  </div>
+  <div class="pgrid" id="pgrid"></div>
+</section>
+
+<!-- PROMO -->
+<div class="promo">
+  <div class="ptx">
+    <div class="ptag">⚡ Oferta Especial</div>
+    <div class="pti">FRETE GRÁTIS<br><span>ACIMA DE R$ 150</span></div>
+    <div class="psu">PIX com desconto extra! Parcele em até 12x no cartão.</div>
+  </div>
+  <a href="https://wa.me/5521965077799?text=Olá!%20Quero%20aproveitar%20a%20promoção%20de%20frete%20grátis!" class="bw" target="_blank" style="position:relative;z-index:1">💬 Aproveitar Agora</a>
+</div>
+
+
+
+<section class="sec" id="videos" style="padding-top:0">
+  <div class="stag">● Vídeos prontos para divulgação</div>
+  <div class="sti">VÍDEOS DE PRODUTO</div>
+  <div class="vgrid" id="vgrid"></div>
+  <div class="notice">Os vídeos abaixo já estão incluídos neste pacote para você publicar no site ou usar nas redes. São teasers promocionais gerados a partir das artes dos produtos da vitrine.</div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="sec" id="sobre">
+  <div class="stag">● Por que nos escolher</div>
+  <div class="sti">NOSSOS DIFERENCIAIS</div>
+  <div class="feats">
+    <div class="ft"><div class="fic">⚡</div><div class="ftt">Entrega Rápida</div><div class="fds">Enviamos no mesmo dia para pedidos até às 14h via Correios ou motoboy no RJ.</div></div>
+    <div class="ft"><div class="fic">💯</div><div class="ftt">Qualidade Garantida</div><div class="fds">Produtos testados antes do envio. Satisfação garantida ou devolvemos seu dinheiro.</div></div>
+    <div class="ft"><div class="fic">💬</div><div class="ftt">Compra pelo WhatsApp</div><div class="fds">Simples e rápido. Clique no produto, manda mensagem e pronto!</div></div>
+    <div class="ft"><div class="fic">💳</div><div class="ftt">Pague como Quiser</div><div class="fds">PIX, cartão de crédito ou boleto. Parcelamos em até 12x sem juros.</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="ftop">
+    <div>
+      <div class="flo">CARECA<em>STORE</em></div>
+      <div class="fds2">Sua loja de eletrônicos e tecnologia no Rio de Janeiro. Qualidade com os melhores preços.</div>
+    </div>
+    <div class="fl">
+      <h4>Produtos</h4>
+      <ul>
+        <li><a href="#produtos">Smartwatch</a></li>
+        <li><a href="#produtos">Câmeras</a></li>
+        <li><a href="#produtos">Caixas de Som</a></li>
+        <li><a href="#produtos">Projetor 4K</a></li>
+        <li><a href="#produtos">Robô Aspirador</a></li>
+      </ul>
+    </div>
+    <div class="fl">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://wa.me/5521965077799" target="_blank">📱 (21) 96507-7799</a></li>
+        <li><a href="https://wa.me/5521965077799?text=Quero%20saber%20sobre%20trocas" target="_blank">Trocas & Devoluções</a></li>
+        <li><a href="https://wa.me/5521965077799?text=Tenho%20uma%20dúvida" target="_blank">Fale Conosco</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fbot">
+    <p>© 2026 Careca Store – Todos os direitos reservados.</p>
+    <p>Rio de Janeiro, RJ 🇧🇷</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/5521965077799?text=Olá!%20Vim%20pelo%20site%20Careca%20Store!" class="fwa" target="_blank">💬</a>
+
+<script>
+const WA="5521965077799";
+const wa=m=>`https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+
+// SVG product illustrations - each unique, fully embedded
+const svgs = {
+  smartwatch:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0d1a2e"/><rect x="115" y="20" width="70" height="8" rx="4" fill="#334"/><rect x="110" y="155" width="80" height="8" rx="4" fill="#334"/><rect x="105" y="55" width="90" height="90" rx="20" fill="#1a2a4a"/><rect x="108" y="58" width="84" height="84" rx="18" fill="#0f1f38" stroke="#00e5ff" stroke-width="1.5"/><circle cx="150" cy="100" r="35" fill="#0a1628" stroke="#00e5ff" stroke-width="1"/><text x="150" y="92" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">10:35</text><text x="150" y="104" text-anchor="middle" fill="#7a9" font-size="5" font-family="sans-serif">SEG 12</text><path d="M135 112 Q150 105 165 112" stroke="#ff6b00" stroke-width="1.5" fill="none"/><circle cx="135" cy="100" r="2" fill="#00e5ff"/><circle cx="165" cy="100" r="2" fill="#00e5ff"/><rect x="118" y="70" width="8" height="4" rx="2" fill="#25D366"/><rect x="174" y="70" width="8" height="4" rx="2" fill="#e91e63"/></svg>`,
+
+  fone_tws:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0d1a20"/><rect x="80" y="50" width="140" height="100" rx="20" fill="#1a2830" stroke="#00e5ff" stroke-width="1"/><ellipse cx="120" cy="100" rx="18" ry="22" fill="#0f1f28" stroke="#00e5ff" stroke-width="1.2"/><ellipse cx="120" cy="100" rx="10" ry="12" fill="#1a3040"/><circle cx="120" cy="100" r="5" fill="#00e5ff" opacity=".7"/><ellipse cx="180" cy="100" rx="18" ry="22" fill="#0f1f28" stroke="#00e5ff" stroke-width="1.2"/><ellipse cx="180" cy="100" rx="10" ry="12" fill="#1a3040"/><circle cx="180" cy="100" r="5" fill="#00e5ff" opacity=".7"/><path d="M138 85 Q150 75 162 85" stroke="#334" stroke-width="2" fill="none"/><circle cx="150" cy="73" r="5" fill="#25D366"/><text x="150" y="163" text-anchor="middle" fill="#7a9ab0" font-size="9" font-family="sans-serif">30h bateria</text></svg>`,
+
+  headphone:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#1a0d0d"/><path d="M90 110 Q90 55 150 55 Q210 55 210 110" stroke="#ff6b00" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="75" y="105" width="28" height="45" rx="10" fill="#2a1515" stroke="#ff6b00" stroke-width="1.5"/><rect x="80" y="110" width="18" height="35" rx="7" fill="#3a2020"/><rect x="197" y="105" width="28" height="45" rx="10" fill="#2a1515" stroke="#ff6b00" stroke-width="1.5"/><rect x="202" y="110" width="18" height="35" rx="7" fill="#3a2020"/><text x="150" y="175" text-anchor="middle" fill="#ff6b00" font-size="9" font-family="sans-serif">Cancelamento de Ruído</text></svg>`,
+
+  fone_gamer:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0d0a1a"/><path d="M85 105 Q85 50 150 50 Q215 50 215 105" stroke="#9c27b0" stroke-width="3" fill="none"/><rect x="70" y="100" width="32" height="50" rx="8" fill="#1a0a2a" stroke="#9c27b0" stroke-width="1.5"/><rect x="198" y="100" width="32" height="50" rx="8" fill="#1a0a2a" stroke="#9c27b0" stroke-width="1.5"/><rect x="75" y="108" width="22" height="34" rx="5" fill="#2a1040"/><rect x="203" y="108" width="22" height="34" rx="5" fill="#2a1040"/><rect x="75" y="108" width="22" height="6" rx="3" fill="#e91e63" opacity=".8"/><rect x="203" y="108" width="22" height="6" rx="3" fill="#00e5ff" opacity=".8"/><line x1="70" y1="148" x2="55" y2="165" stroke="#9c27b0" stroke-width="2"/><circle cx="52" cy="167" r="4" fill="#9c27b0"/><text x="150" y="178" text-anchor="middle" fill="#9c27b0" font-size="8" font-family="sans-serif">RGB GAMER</text></svg>`,
+
+  caixa_small:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a1a0a"/><rect x="105" y="40" width="90" height="120" rx="15" fill="#1a2a1a" stroke="#25D366" stroke-width="1.5"/><circle cx="150" cy="90" r="28" fill="#0d1f0d" stroke="#25D366" stroke-width="1.2"/><circle cx="150" cy="90" r="18" fill="#1a3a1a"/><circle cx="150" cy="90" r="8" fill="#25D366" opacity=".6"/><circle cx="150" cy="90" r="3" fill="#fff"/><rect x="120" y="128" width="60" height="12" rx="6" fill="#0d1f0d" stroke="#25D366" stroke-width="1"/><rect x="123" y="131" width="20" height="6" rx="3" fill="#25D366" opacity=".7"/><text x="150" y="172" text-anchor="middle" fill="#25D366" font-size="8" font-family="sans-serif">À Prova D'água · 10W</text></svg>`,
+
+  caixa_grande:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a1a"/><rect x="50" y="30" width="200" height="140" rx="10" fill="#12122a" stroke="#9c27b0" stroke-width="1.5"/><circle cx="110" cy="100" r="38" fill="#0a0a1a" stroke="#9c27b0" stroke-width="1.2"/><circle cx="110" cy="100" r="26" fill="#1a1a3a"/><circle cx="110" cy="100" r="10" fill="#9c27b0" opacity=".6"/><circle cx="110" cy="100" r="4" fill="#fff"/><circle cx="200" cy="100" r="28" fill="#0a0a1a" stroke="#9c27b0" stroke-width="1.2"/><circle cx="200" cy="100" r="18" fill="#1a1a3a"/><circle cx="200" cy="100" r="7" fill="#9c27b0" opacity=".6"/><rect x="60" y="40" width="180" height="8" rx="4" fill="#9c27b0" opacity=".3"/><rect x="60" y="40" width="60" height="8" rx="4" fill="#e91e63" opacity=".8"/><rect x="122" y="40" width="40" height="8" rx="4" fill="#ff6b00" opacity=".8"/><rect x="164" y="40" width="30" height="8" rx="4" fill="#00e5ff" opacity=".8"/><text x="150" y="182" text-anchor="middle" fill="#9c27b0" font-size="9" font-family="sans-serif">40W · LED RGB · Festas</text></svg>`,
+
+  soundbar:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0a"/><rect x="40" y="70" width="220" height="60" rx="8" fill="#1a1a1a" stroke="#00e5ff" stroke-width="1.5"/><circle cx="85" cy="100" r="20" fill="#0a0a0a" stroke="#00e5ff" stroke-width="1"/><circle cx="85" cy="100" r="12" fill="#1a1a1a"/><circle cx="85" cy="100" r="5" fill="#00e5ff" opacity=".5"/><circle cx="150" cy="100" r="24" fill="#0a0a0a" stroke="#00e5ff" stroke-width="1"/><circle cx="150" cy="100" r="15" fill="#1a1a1a"/><circle cx="150" cy="100" r="6" fill="#00e5ff" opacity=".5"/><circle cx="215" cy="100" r="20" fill="#0a0a0a" stroke="#00e5ff" stroke-width="1"/><circle cx="215" cy="100" r="12" fill="#1a1a1a"/><circle cx="215" cy="100" r="5" fill="#00e5ff" opacity=".5"/><rect x="40" y="140" width="220" height="20" rx="5" fill="#1a1a2a" stroke="#334" stroke-width="1"/><rect x="150" y="150" width="40" height="3" rx="1" fill="#00e5ff" opacity=".6"/><text x="150" y="168" text-anchor="middle" fill="#7a8" font-size="8" font-family="sans-serif">HOME THEATER 2.1 · 60W</text></svg>`,
+
+  caixa_usb:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0d0a"/><rect x="110" y="45" width="80" height="100" rx="10" fill="#151f15" stroke="#25D366" stroke-width="1"/><circle cx="150" cy="90" r="25" fill="#0a100a" stroke="#25D366" stroke-width="1"/><circle cx="150" cy="90" r="15" fill="#152015"/><circle cx="150" cy="90" r="6" fill="#25D366" opacity=".5"/><rect x="120" y="123" width="60" height="10" rx="5" fill="#0a100a" stroke="#25D366" stroke-width=".8"/><rect x="130" y="126" width="15" height="4" rx="2" fill="#25D366" opacity=".6"/><rect x="143" y="50" width="14" height="6" rx="3" fill="#25D366" opacity=".4"/><text x="150" y="160" text-anchor="middle" fill="#25D366" font-size="8" font-family="sans-serif">USB · FM · Cartão SD</text></svg>`,
+
+  projetor:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><rect x="80" y="65" width="120" height="70" rx="10" fill="#1a1a2a" stroke="#00e5ff" stroke-width="1.5"/><circle cx="210" cy="100" r="25" fill="#1a1a2a" stroke="#00e5ff" stroke-width="1"/><circle cx="210" cy="100" r="16" fill="#0a0a18"/><circle cx="210" cy="100" r="9" fill="#00e5ff" opacity=".3"/><circle cx="210" cy="100" r="4" fill="#00e5ff" opacity=".8"/><path d="M80 80 L30 55 M80 120 L30 145" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="3,3" opacity=".5"/><rect x="30" y="50" width="50" height="95" rx="3" fill="none" stroke="#00e5ff" stroke-width="1" opacity=".3"/><rect x="32" y="52" width="46" height="91" rx="2" fill="#00e5ff" opacity=".04"/><text x="55" y="98" text-anchor="middle" fill="#00e5ff" font-size="6" opacity=".7">4K</text><rect x="90" y="75" width="40" height="6" rx="3" fill="#334"/><rect x="90" y="85" width="60" height="6" rx="3" fill="#334"/><rect x="90" y="95" width="50" height="6" rx="3" fill="#334"/><text x="140" y="170" text-anchor="middle" fill="#00e5ff" font-size="9" font-family="sans-serif">PROJETOR 4K · 9500 LÚMENS</text></svg>`,
+
+  cam_interna:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><circle cx="150" cy="95" r="55" fill="#12121a" stroke="#00e5ff" stroke-width="1.5"/><circle cx="150" cy="95" r="38" fill="#0a0a14" stroke="#334" stroke-width="1"/><circle cx="150" cy="95" r="22" fill="#141428"/><circle cx="150" cy="95" r="12" fill="#00e5ff" opacity=".15"/><circle cx="150" cy="95" r="5" fill="#00e5ff" opacity=".5"/><circle cx="170" cy="75" r="5" fill="#e91e63" opacity=".8"/><path d="M145 155 L145 170 L150 175 L155 170 L155 155" fill="#1a1a2a" stroke="#334" stroke-width="1"/><rect x="130" y="168" width="40" height="6" rx="3" fill="#1a1a2a" stroke="#334" stroke-width="1"/><text x="150" y="185" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">Wi-Fi 360° Full HD</text></svg>`,
+
+  cam_externa:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0f0a"/><rect x="100" y="50" width="100" height="70" rx="8" fill="#131f13" stroke="#25D366" stroke-width="1.5"/><circle cx="150" cy="85" r="22" fill="#0a120a" stroke="#25D366" stroke-width="1"/><circle cx="150" cy="85" r="14" fill="#152015"/><circle cx="150" cy="85" r="6" fill="#25D366" opacity=".4"/><circle cx="168" cy="67" r="4" fill="#e91e63"/><rect x="140" y="120" width="20" height="30" rx="4" fill="#131f13" stroke="#334" stroke-width="1"/><rect x="120" y="148" width="60" height="10" rx="5" fill="#131f13" stroke="#334" stroke-width="1"/><path d="M100 55 L85 40" stroke="#25D366" stroke-width="1.5" stroke-dasharray="3,2" opacity=".6"/><path d="M200 55 L215 40" stroke="#25D366" stroke-width="1.5" stroke-dasharray="3,2" opacity=".6"/><text x="150" y="172" text-anchor="middle" fill="#25D366" font-size="8" font-family="sans-serif">IP66 · 4MP · Visão Noturna</text></svg>`,
+
+  kit_cameras:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0a"/><rect x="30" y="30" width="55" height="40" rx="6" fill="#1a1a1a" stroke="#00e5ff" stroke-width="1"/><circle cx="57" cy="50" r="12" fill="#0a0a0a" stroke="#00e5ff" stroke-width=".8"/><circle cx="57" cy="50" r="6" fill="#00e5ff" opacity=".3"/><rect x="215" y="30" width="55" height="40" rx="6" fill="#1a1a1a" stroke="#00e5ff" stroke-width="1"/><circle cx="242" cy="50" r="12" fill="#0a0a0a" stroke="#00e5ff" stroke-width=".8"/><circle cx="242" cy="50" r="6" fill="#00e5ff" opacity=".3"/><rect x="30" y="130" width="55" height="40" rx="6" fill="#1a1a1a" stroke="#00e5ff" stroke-width="1"/><circle cx="57" cy="150" r="12" fill="#0a0a0a" stroke="#00e5ff" stroke-width=".8"/><circle cx="57" cy="150" r="6" fill="#00e5ff" opacity=".3"/><rect x="215" y="130" width="55" height="40" rx="6" fill="#1a1a1a" stroke="#00e5ff" stroke-width="1"/><circle cx="242" cy="150" r="12" fill="#0a0a0a" stroke="#00e5ff" stroke-width=".8"/><circle cx="242" cy="150" r="6" fill="#00e5ff" opacity=".3"/><rect x="115" y="70" width="70" height="60" rx="6" fill="#1a1a2a" stroke="#00e5ff" stroke-width="1.2"/><rect x="118" y="73" width="64" height="54" rx="4" fill="#0a0a18"/><text x="150" y="104" text-anchor="middle" fill="#00e5ff" font-size="7">DVR HD</text><line x1="85" y1="50" x2="115" y2="90" stroke="#334" stroke-width="1"/><line x1="215" y1="50" x2="185" y2="90" stroke="#334" stroke-width="1"/><line x1="85" y1="150" x2="115" y2="130" stroke="#334" stroke-width="1"/><line x1="215" y1="150" x2="185" y2="130" stroke="#334" stroke-width="1"/></svg>`,
+
+  powerbank:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0d0d1a"/><rect x="90" y="55" width="120" height="90" rx="14" fill="#1a1a2e" stroke="#00e5ff" stroke-width="1.5"/><rect x="95" y="60" width="110" height="80" rx="11" fill="#12122a"/><rect x="98" y="68" width="40" height="16" rx="3" fill="#0a0a1a" stroke="#00e5ff" stroke-width=".8"/><text x="118" y="80" text-anchor="middle" fill="#00e5ff" font-size="7" font-family="monospace">USB-A</text><rect x="98" y="90" width="40" height="16" rx="3" fill="#0a0a1a" stroke="#ff6b00" stroke-width=".8"/><text x="118" y="102" text-anchor="middle" fill="#ff6b00" font-size="7" font-family="monospace">TYPE-C</text><text x="185" y="100" text-anchor="middle" fill="#00e5ff" font-size="20" font-weight="bold">⚡</text><rect x="205" y="85" width="8" height="30" rx="3" fill="#1a1a2e" stroke="#334" stroke-width="1"/><text x="150" y="160" text-anchor="middle" fill="#00e5ff" font-size="9" font-family="sans-serif">20.000mAh · 22W</text></svg>`,
+
+  powerbank_solar:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a1a0a"/><rect x="80" y="50" width="140" height="90" rx="12" fill="#1a2a1a" stroke="#ff6b00" stroke-width="1.5"/><rect x="85" y="55" width="130" height="80" rx="9" fill="#122a12"/><rect x="88" y="58" width="58" height="38" rx="4" fill="#0a1f0a" stroke="#ff6b00" stroke-width=".8"/><rect x="88" y="98" width="58" height="32" rx="4" fill="#0a1f0a" stroke="#ff6b00" stroke-width=".8"/><line x1="117" y1="58" x2="117" y2="96" stroke="#ff6b00" stroke-width=".5" opacity=".5"/><line x1="88" y1="77" x2="146" y2="77" stroke="#ff6b00" stroke-width=".5" opacity=".5"/><line x1="117" y1="98" x2="117" y2="130" stroke="#ff6b00" stroke-width=".5" opacity=".5"/><line x1="88" y1="114" x2="146" y2="114" stroke="#ff6b00" stroke-width=".5" opacity=".5"/><text x="185" y="96" text-anchor="middle" fill="#ff6b00" font-size="22">☀️</text><text x="150" y="160" text-anchor="middle" fill="#ff6b00" font-size="8" font-family="sans-serif">SOLAR · 10.000mAh · À Prova D'água</text></svg>`,
+
+  cartao:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0d1a"/><rect x="100" y="40" width="100" height="120" rx="8" fill="#1a1f2a" stroke="#00e5ff" stroke-width="1.5"/><rect x="105" y="45" width="90" height="110" rx="6" fill="#12151f"/><rect x="110" y="55" width="80" height="50" rx="4" fill="#0a0d18"/><text x="150" y="77" text-anchor="middle" fill="#00e5ff" font-size="9" font-family="monospace">128GB</text><text x="150" y="91" text-anchor="middle" fill="#7a9" font-size="7" font-family="monospace">CLASS 10</text><rect x="116" y="112" width="68" height="5" rx="2" fill="#334"/><rect x="116" y="122" width="50" height="5" rx="2" fill="#334"/><text x="150" y="175" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">MicroSD Ultra Speed</text></svg>`,
+
+  pendrive:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a1a"/><rect x="110" y="60" width="80" height="100" rx="10" fill="#1a1a2e" stroke="#9c27b0" stroke-width="1.5"/><rect x="120" y="65" width="60" height="30" rx="5" fill="#12122a"/><text x="150" y="85" text-anchor="middle" fill="#9c27b0" font-size="10" font-family="monospace">256GB</text><rect x="130" y="105" width="40" height="20" rx="4" fill="#12122a" stroke="#9c27b0" stroke-width=".8"/><text x="150" y="119" text-anchor="middle" fill="#9c27b0" font-size="7" font-family="monospace">USB 3.0</text><rect x="137" y="148" width="26" height="8" rx="4" fill="#1a1a2a" stroke="#334" stroke-width="1"/><text x="150" y="175" text-anchor="middle" fill="#9c27b0" font-size="8" font-family="sans-serif">Dual Type-C</text></svg>`,
+
+  ssd:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><rect x="70" y="60" width="160" height="80" rx="10" fill="#1a1a22" stroke="#00e5ff" stroke-width="1.5"/><rect x="78" y="68" width="80" height="64" rx="6" fill="#12121a"/><rect x="82" y="72" width="30" height="20" rx="3" fill="#0a0a14" stroke="#334" stroke-width=".8"/><rect x="82" y="98" width="30" height="20" rx="3" fill="#0a0a14" stroke="#334" stroke-width=".8"/><rect x="118" y="72" width="32" height="46" rx="3" fill="#0a0a14" stroke="#00e5ff" stroke-width=".8"/><text x="134" y="99" text-anchor="middle" fill="#00e5ff" font-size="7" font-family="monospace">SSD</text><rect x="168" y="75" width="52" height="50" rx="6" fill="#12121a"/><text x="194" y="98" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="monospace">1TB</text><text x="150" y="165" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">500MB/s · USB 3.2</text></svg>`,
+
+  pressao:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a1a1a"/><rect x="90" y="40" width="120" height="80" rx="12" fill="#1a2a2a" stroke="#00e5ff" stroke-width="1.5"/><rect x="95" y="45" width="110" height="70" rx="9" fill="#12222a"/><rect x="105" y="52" width="90" height="45" rx="6" fill="#0a1a22"/><text x="150" y="72" text-anchor="middle" fill="#00e5ff" font-size="11" font-family="monospace">120/80</text><text x="150" y="85" text-anchor="middle" fill="#25D366" font-size="7" font-family="sans-serif">mmHg</text><text x="150" y="100" text-anchor="middle" fill="#ff6b00" font-size="7">♥ 72 bpm</text><path d="M120 130 Q150 120 180 130 Q180 165 150 170 Q120 165 120 130" fill="#1a2a3a" stroke="#00e5ff" stroke-width="1"/><rect x="140" y="168" width="20" height="8" rx="4" fill="#1a2a3a" stroke="#334" stroke-width=".8"/><text x="150" y="188" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">Automático Digital</text></svg>`,
+
+  oximetro:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#1a0a0a"/><rect x="85" y="55" width="130" height="90" rx="14" fill="#2a1a1a" stroke="#e91e63" stroke-width="1.5"/><rect x="90" y="60" width="120" height="80" rx="11" fill="#1a1010"/><rect x="95" y="65" width="110" height="50" rx="6" fill="#0a0808"/><text x="150" y="90" text-anchor="middle" fill="#e91e63" font-size="16" font-family="monospace">98%</text><text x="150" y="103" text-anchor="middle" fill="#ff6b00" font-size="8" font-family="sans-serif">SpO2</text><text x="150" y="125" text-anchor="middle" fill="#25D366" font-size="8">♥ 75 bpm</text><rect x="120" y="140" width="60" height="0" rx="0"/><text x="150" y="165" text-anchor="middle" fill="#e91e63" font-size="8" font-family="sans-serif">Display OLED Colorido</text></svg>`,
+
+  balanca:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0d0d0d"/><rect x="60" y="90" width="180" height="70" rx="6" fill="#1a1a1a" stroke="#9c27b0" stroke-width="1.5"/><rect x="64" y="94" width="172" height="62" rx="4" fill="#121212"/><rect x="80" y="102" width="80" height="30" rx="5" fill="#0a0a0a" stroke="#9c27b0" stroke-width=".8"/><text x="120" y="123" text-anchor="middle" fill="#9c27b0" font-size="14" font-family="monospace">72.5</text><text x="175" y="117" text-anchor="middle" fill="#7a8" font-size="8">kg</text><text x="150" y="175" text-anchor="middle" fill="#9c27b0" font-size="8" font-family="sans-serif">Vidro Temperado · Digital</text></svg>`,
+
+  escova:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a1a1a"/><rect x="135" y="20" width="30" height="130" rx="15" fill="#1a3a3a" stroke="#00e5ff" stroke-width="1.5"/><rect x="138" y="23" width="24" height="50" rx="12" fill="#12282a"/><rect x="140" y="26" width="20" height="40" rx="10" fill="#0a2030"/><rect x="132" y="22" width="36" height="14" rx="7" fill="#1a4a4a"/><rect x="135" y="24" width="30" height="3" rx="1" fill="#00e5ff" opacity=".4"/><circle cx="150" cy="100" r="8" fill="#0a2030" stroke="#00e5ff" stroke-width=".8"/><text x="150" y="103" text-anchor="middle" fill="#00e5ff" font-size="8">II</text><rect x="140" y="145" width="20" height="8" rx="4" fill="#1a3a3a" stroke="#334" stroke-width="1"/><text x="150" y="168" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">USB · 3 Modos</text></svg>`,
+
+  barbeador:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0d0a1a"/><rect x="120" y="25" width="60" height="150" rx="20" fill="#1a152a" stroke="#9c27b0" stroke-width="1.5"/><rect x="125" y="30" width="50" height="60" rx="16" fill="#221a35"/><rect x="128" y="33" width="44" height="54" rx="14" fill="#2a2040"/><rect x="130" y="38" width="18" height="40" rx="6" fill="#1a152a" stroke="#9c27b0" stroke-width=".8"/><rect x="152" y="38" width="18" height="40" rx="6" fill="#1a152a" stroke="#9c27b0" stroke-width=".8"/><circle cx="150" cy="115" r="10" fill="#221a35" stroke="#9c27b0" stroke-width=".8"/><text x="150" y="118" text-anchor="middle" fill="#9c27b0" font-size="8">ON</text><text x="150" y="172" text-anchor="middle" fill="#9c27b0" font-size="8" font-family="sans-serif">Rotativo · 3 Cabeças · USB</text></svg>`,
+
+  robo_aspirador:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><circle cx="150" cy="95" r="65" fill="#1a1a2e" stroke="#00e5ff" stroke-width="2"/><circle cx="150" cy="95" r="55" fill="#12122a"/><circle cx="150" cy="95" r="30" fill="#0a0a18" stroke="#334" stroke-width="1"/><text x="150" y="99" text-anchor="middle" fill="#00e5ff" font-size="9" font-family="sans-serif">Wi-Fi</text><circle cx="110" cy="65" r="8" fill="#0a0a18" stroke="#00e5ff" stroke-width="1"/><circle cx="110" cy="65" r="4" fill="#00e5ff" opacity=".5"/><rect x="135" y="48" width="30" height="6" rx="3" fill="#0a0a18" stroke="#334" stroke-width=".8"/><rect x="125" y="155" width="50" height="8" rx="4" fill="#1a1a2e" stroke="#334" stroke-width="1"/><circle cx="100" cy="155" r="6" fill="#334"/><circle cx="200" cy="155" r="6" fill="#334"/><text x="150" y="178" text-anchor="middle" fill="#00e5ff" font-size="9" font-family="sans-serif">Robô Aspirador · App</text></svg>`,
+
+  lampada_smart:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="lg" cx="50%" cy="40%"><stop offset="0%" stop-color="#ffee58" stop-opacity=".9"/><stop offset="60%" stop-color="#ff6b00" stop-opacity=".4"/><stop offset="100%" stop-color="#9c27b0" stop-opacity="0"/></radialGradient></defs><rect width="300" height="200" fill="#0a0a10"/><ellipse cx="150" cy="95" rx="80" ry="75" fill="url(#lg)" opacity=".15"/><ellipse cx="150" cy="80" rx="35" ry="40" fill="#2a2a10" stroke="#ffee58" stroke-width="1.5"/><rect x="138" y="118" width="24" height="30" rx="5" fill="#2a2a15" stroke="#ffee58" stroke-width="1"/><rect x="136" y="146" width="28" height="8" rx="4" fill="#2a2a15" stroke="#334" stroke-width=".8"/><rect x="136" y="154" width="28" height="8" rx="4" fill="#2a2a15" stroke="#334" stroke-width=".8"/><line x1="150" y1="40" x2="150" y2="30" stroke="#ffee58" stroke-width="2"/><line x1="115" y1="52" x2="108" y2="44" stroke="#ff6b00" stroke-width="2"/><line x1="185" y1="52" x2="192" y2="44" stroke="#9c27b0" stroke-width="2"/><line x1="105" y1="80" x2="95" y2="80" stroke="#00e5ff" stroke-width="2"/><line x1="195" y1="80" x2="205" y2="80" stroke="#e91e63" stroke-width="2"/><text x="150" y="178" text-anchor="middle" fill="#ffee58" font-size="8" font-family="sans-serif">RGB Smart · Alexa · 16M Cores</text></svg>`,
+
+  tomada_smart:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0d1a"/><rect x="100" y="55" width="100" height="90" rx="10" fill="#1a1f2a" stroke="#00e5ff" stroke-width="1.5"/><rect x="135" y="72" width="12" height="18" rx="3" fill="#0a0d18"/><rect x="153" y="72" width="12" height="18" rx="3" fill="#0a0d18"/><circle cx="150" cy="112" r="12" fill="#0a0d18" stroke="#00e5ff" stroke-width="1"/><circle cx="150" cy="112" r="6" fill="#25D366" opacity=".8"/><text x="150" y="170" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">Wi-Fi · Alexa · Consumo</text></svg>`,
+
+  ferro:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><path d="M80 120 Q80 80 130 70 L220 70 L230 100 Q230 130 80 130 Z" fill="#1a1a2a" stroke="#9c27b0" stroke-width="1.5"/><path d="M85 125 Q85 83 132 74 L218 74 L227 100 Q226 127 85 127 Z" fill="#12122a"/><rect x="130" y="55" width="60" height="20" rx="8" fill="#1a1a2a" stroke="#9c27b0" stroke-width="1"/><rect x="140" y="58" width="40" height="14" rx="6" fill="#221a35"/><rect x="85" y="126" width="140" height="8" rx="4" fill="#2a2a3a" stroke="#9c27b0" stroke-width=".8"/><text x="150" y="168" text-anchor="middle" fill="#9c27b0" font-size="8" font-family="sans-serif">1200W · Antiaderente · Vapor</text></svg>`,
+
+  ferro_vapor:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a1a1a"/><rect x="130" y="30" width="40" height="130" rx="10" fill="#1a2a2a" stroke="#00e5ff" stroke-width="1.5"/><rect x="133" y="33" width="34" height="124" rx="8" fill="#12222a"/><rect x="120" y="155" width="60" height="12" rx="6" fill="#1a2a2a" stroke="#334" stroke-width="1"/><rect x="95" y="100" width="40" height="8" rx="4" fill="#00e5ff" stroke="none" opacity=".2"/><rect x="165" y="80" width="40" height="8" rx="4" fill="#00e5ff" stroke="none" opacity=".2"/><text x="148" y="75" text-anchor="end" fill="#00e5ff" font-size="14" opacity=".6">〜</text><text x="162" y="55" text-anchor="start" fill="#00e5ff" font-size="14" opacity=".5">〜</text><text x="148" y="95" text-anchor="end" fill="#00e5ff" font-size="10" opacity=".4">〜</text><text x="150" y="180" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">Vapor Vertical · Portátil</text></svg>`,
+
+  ventilador_usb:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a1a0a"/><circle cx="150" cy="95" r="55" fill="#1a2a1a" stroke="#25D366" stroke-width="1.5"/><circle cx="150" cy="95" r="45" fill="#12201a"/><path d="M150 95 Q155 65 170 60 Q180 75 165 90 Z" fill="#25D366" opacity=".7"/><path d="M150 95 Q180 90 185 75 Q170 65 165 80 Z" fill="#25D366" opacity=".5"/><path d="M150 95 Q145 125 130 130 Q120 115 135 100 Z" fill="#25D366" opacity=".7"/><path d="M150 95 Q120 100 115 115 Q130 125 135 110 Z" fill="#25D366" opacity=".5"/><circle cx="150" cy="95" r="12" fill="#0a1a0a" stroke="#25D366" stroke-width="1"/><circle cx="150" cy="95" r="5" fill="#25D366" opacity=".6"/><rect x="143" y="148" width="14" height="30" rx="5" fill="#1a2a1a" stroke="#334" stroke-width="1"/><text x="150" y="190" text-anchor="middle" fill="#25D366" font-size="8" font-family="sans-serif">USB · 3 Velocidades</text></svg>`,
+
+  ventilador_torre:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0d0a1a"/><rect x="120" y="20" width="60" height="160" rx="20" fill="#1a152a" stroke="#9c27b0" stroke-width="1.5"/><rect x="123" y="23" width="54" height="154" rx="18" fill="#12112a"/><rect x="126" y="30" width="48" height="100" rx="14" fill="#0f0f22"/><line x1="150" y1="35" x2="150" y2="125" stroke="#9c27b0" stroke-width=".5" opacity=".4" stroke-dasharray="4,4"/><line x1="126" y1="60" x2="174" y2="60" stroke="#9c27b0" stroke-width=".5" opacity=".3"/><line x1="126" y1="80" x2="174" y2="80" stroke="#9c27b0" stroke-width=".5" opacity=".3"/><line x1="126" y1="100" x2="174" y2="100" stroke="#9c27b0" stroke-width=".5" opacity=".3"/><circle cx="150" cy="148" r="8" fill="#221a35" stroke="#9c27b0" stroke-width=".8"/><text x="150" y="152" text-anchor="middle" fill="#9c27b0" font-size="7">ON</text><text x="150" y="190" text-anchor="middle" fill="#9c27b0" font-size="8" font-family="sans-serif">Torre USB · Controle Remoto</text></svg>`,
+
+  controle_tv:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0a"/><rect x="105" y="30" width="90" height="140" rx="14" fill="#1a1a1a" stroke="#00e5ff" stroke-width="1.5"/><rect x="110" y="40" width="80" height="30" rx="6" fill="#0a0a0a" stroke="#334" stroke-width="1"/><circle cx="150" cy="55" r="8" fill="#00e5ff" opacity=".2"/><text x="150" y="59" text-anchor="middle" fill="#00e5ff" font-size="9">▶</text><circle cx="133" cy="85" r="7" fill="#1a1a1a" stroke="#334" stroke-width="1"/><circle cx="150" cy="85" r="7" fill="#e91e63" stroke="#e91e63" stroke-width="1"/><circle cx="167" cy="85" r="7" fill="#1a1a1a" stroke="#334" stroke-width="1"/><circle cx="133" cy="103" r="7" fill="#1a1a1a" stroke="#334" stroke-width="1"/><circle cx="150" cy="103" r="7" fill="#1a1a1a" stroke="#334" stroke-width="1"/><circle cx="167" cy="103" r="7" fill="#1a1a1a" stroke="#334" stroke-width="1"/><rect x="118" y="120" width="24" height="7" rx="3" fill="#1a1a1a" stroke="#334" stroke-width=".8"/><rect x="158" y="120" width="24" height="7" rx="3" fill="#1a1a1a" stroke="#334" stroke-width=".8"/></svg>`,
+
+  controle_tvbox:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0d0a0a"/><rect x="100" y="25" width="100" height="150" rx="16" fill="#1a1212" stroke="#ff6b00" stroke-width="1.5"/><rect x="105" y="35" width="90" height="35" rx="8" fill="#0a0808" stroke="#334" stroke-width="1"/><text x="150" y="57" text-anchor="middle" fill="#ff6b00" font-size="8">TV BOX</text><circle cx="150" cy="90" r="18" fill="#1a1212" stroke="#ff6b00" stroke-width="1"/><text x="150" y="86" text-anchor="middle" fill="#ff6b00" font-size="8">▲</text><text x="150" y="100" text-anchor="middle" fill="#ff6b00" font-size="8">▼</text><text x="136" y="94" text-anchor="middle" fill="#ff6b00" font-size="8">◀</text><text x="164" y="94" text-anchor="middle" fill="#ff6b00" font-size="8">▶</text><circle cx="150" cy="93" r="5" fill="#ff6b00" opacity=".3"/><circle cx="125" cy="120" r="7" fill="#1a1212" stroke="#334" stroke-width=".8"/><circle cx="150" cy="120" r="7" fill="#1a1212" stroke="#334" stroke-width=".8"/><circle cx="175" cy="120" r="7" fill="#1a1212" stroke="#334" stroke-width=".8"/></svg>`,
+
+  antena:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><rect x="100" y="100" width="100" height="60" rx="8" fill="#1a1a2a" stroke="#00e5ff" stroke-width="1.5"/><rect x="145" y="65" width="10" height="40" fill="#1a1a2a" stroke="#334" stroke-width="1"/><path d="M120 65 L150 50 L180 65" stroke="#00e5ff" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="130" y="63" width="40" height="6" rx="3" fill="#1a1a2a" stroke="#00e5ff" stroke-width=".8"/><path d="M108 80 Q150 65 192 80" stroke="#00e5ff" stroke-width="1" stroke-dasharray="4,3" fill="none" opacity=".5"/><path d="M118 90 Q150 79 182 90" stroke="#00e5ff" stroke-width="1" stroke-dasharray="3,3" fill="none" opacity=".3"/><rect x="115" y="108" width="70" height="12" rx="4" fill="#0a0a18" stroke="#334" stroke-width=".8"/><text x="150" y="118" text-anchor="middle" fill="#00e5ff" font-size="6" font-family="monospace">HD 4K</text><text x="150" y="180" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">Digital · 50dB · Amplificada</text></svg>`,
+
+  tvbox:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><rect x="70" y="70" width="160" height="80" rx="8" fill="#1a1a2a" stroke="#9c27b0" stroke-width="1.5"/><rect x="74" y="74" width="152" height="72" rx="6" fill="#12122a"/><rect x="82" y="82" width="88" height="56" rx="4" fill="#0a0a18" stroke="#334" stroke-width=".8"/><text x="126" y="114" text-anchor="middle" fill="#9c27b0" font-size="10">Android 11</text><text x="126" y="126" text-anchor="middle" fill="#7a9" font-size="7">4K · 4GB · 64GB</text><rect x="178" y="88" width="36" height="12" rx="4" fill="#1a1a2a" stroke="#9c27b0" stroke-width=".8"/><text x="196" y="97" text-anchor="middle" fill="#9c27b0" font-size="6">USB</text><rect x="178" y="104" width="36" height="12" rx="4" fill="#1a1a2a" stroke="#334" stroke-width=".8"/><text x="196" y="113" text-anchor="middle" fill="#7a8" font-size="6">HDMI</text><text x="150" y="172" text-anchor="middle" fill="#9c27b0" font-size="8" font-family="sans-serif">TV Box 4K · Wi-Fi 6 · Bluetooth</text></svg>`,
+
+  cama_pet:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a1a10"/><ellipse cx="150" cy="120" rx="100" ry="30" fill="#1a2a18" stroke="#25D366" stroke-width="1.5"/><ellipse cx="150" cy="115" rx="90" ry="25" fill="#122018"/><rect x="60" y="80" width="30" height="40" rx="15" fill="#1a2a18" stroke="#25D366" stroke-width="1"/><rect x="210" y="80" width="30" height="40" rx="15" fill="#1a2a18" stroke="#25D366" stroke-width="1"/><rect x="60" y="115" width="180" height="12" rx="6" fill="#1a2a18" stroke="#334" stroke-width="1"/><text x="150" y="80" text-anchor="middle" fill="#25D366" font-size="20">🐕</text><text x="150" y="175" text-anchor="middle" fill="#25D366" font-size="8" font-family="sans-serif">Cama Pet Luxo · Lavável</text></svg>`,
+
+  bebedouro_pet:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a1520"/><rect x="110" y="40" width="80" height="90" rx="10" fill="#152535" stroke="#00e5ff" stroke-width="1.5"/><rect x="115" y="45" width="70" height="80" rx="7" fill="#0f1e2f"/><ellipse cx="150" cy="135" rx="50" ry="14" fill="#152535" stroke="#00e5ff" stroke-width="1"/><rect x="130" y="128" width="40" height="15" rx="4" fill="#0a1828"/><text x="150" y="65" text-anchor="middle" fill="#00e5ff" font-size="20" opacity=".5">💧</text><path d="M140 75 Q150 85 160 75 Q155 95 150 100 Q145 95 140 75" fill="#00e5ff" opacity=".3"/><text x="150" y="165" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">Bebedouro Pet · Filtro USB · 2L</text></svg>`,
+
+  furadeira:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#1a0a0a"/><rect x="100" y="70" width="100" height="50" rx="8" fill="#2a1515" stroke="#ff6b00" stroke-width="1.5"/><rect x="195" y="82" width="40" height="8" rx="2" fill="#1a1a1a" stroke="#ff6b00" stroke-width=".8"/><rect x="230" y="84" width="30" height="4" rx="2" fill="#ff6b00" opacity=".8"/><rect x="130" y="118" width="30" height="40" rx="6" fill="#2a1515" stroke="#ff6b00" stroke-width="1"/><circle cx="150" cy="95" r="12" fill="#1a0f0f" stroke="#ff6b00" stroke-width="1"/><text x="150" y="99" text-anchor="middle" fill="#ff6b00" font-size="10">⚙</text><text x="150" y="178" text-anchor="middle" fill="#ff6b00" font-size="8" font-family="sans-serif">Mini USB · Kit 25 Brocas</text></svg>`,
+
+  parafusadeira:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#1a0a1a"/><rect x="90" y="65" width="110" height="55" rx="8" fill="#2a152a" stroke="#9c27b0" stroke-width="1.5"/><rect x="195" y="79" width="35" height="8" rx="2" fill="#9c27b0" opacity=".6"/><rect x="225" y="81" width="25" height="4" rx="2" fill="#9c27b0" opacity=".9"/><rect x="120" y="118" width="35" height="45" rx="8" fill="#2a152a" stroke="#9c27b0" stroke-width="1"/><circle cx="148" cy="92" r="14" fill="#1a0f1a" stroke="#9c27b0" stroke-width="1"/><text x="148" y="97" text-anchor="middle" fill="#9c27b0" font-size="12">⚙</text><rect x="90" y="108" width="32" height="14" rx="4" fill="#1a0f1a" stroke="#9c27b0" stroke-width=".8"/><text x="106" y="119" text-anchor="middle" fill="#9c27b0" font-size="7">USB-C</text><text x="150" y="180" text-anchor="middle" fill="#9c27b0" font-size="8" font-family="sans-serif">Sem Fio · USB-C · Com Maleta</text></svg>`,
+
+  mouse:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><path d="M125 60 Q125 30 150 30 Q175 30 175 60 L180 140 Q180 160 150 162 Q120 160 120 140 Z" fill="#1a1a2a" stroke="#00e5ff" stroke-width="1.5"/><line x1="150" y1="30" x2="150" y2="110" stroke="#334" stroke-width="1"/><rect x="144" y="60" width="12" height="25" rx="5" fill="#00e5ff" opacity=".3" stroke="#00e5ff" stroke-width=".8"/><rect x="130" y="135" width="40" height="8" rx="4" fill="#12122a" stroke="#334" stroke-width=".8"/><text x="150" y="180" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">Sem Fio · Silencioso · USB-C</text></svg>`,
+
+  teclado:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0d0a"/><rect x="50" y="65" width="200" height="90" rx="8" fill="#152015" stroke="#25D366" stroke-width="1.5"/><rect x="55" y="70" width="190" height="80" rx="6" fill="#0f180f"/><rect x="62" y="78" width="176" height="14" rx="3" fill="#1a2a1a"/><rect x="62" y="98" width="176" height="14" rx="3" fill="#1a2a1a"/><rect x="62" y="118" width="176" height="14" rx="3" fill="#1a2a1a"/><rect x="64" y="80" width="12" height="10" rx="2" fill="#25D366" opacity=".3"/><rect x="80" y="80" width="12" height="10" rx="2" fill="#25D366" opacity=".2"/><rect x="96" y="80" width="12" height="10" rx="2" fill="#25D366" opacity=".2"/><rect x="64" y="100" width="18" height="10" rx="2" fill="#25D366" opacity=".3"/><rect x="86" y="100" width="12" height="10" rx="2" fill="#25D366" opacity=".2"/><rect x="80" y="120" width="140" height="10" rx="2" fill="#25D366" opacity=".2"/><text x="150" y="175" text-anchor="middle" fill="#25D366" font-size="8" font-family="sans-serif">Bluetooth Slim · Recarregável</text></svg>`,
+
+  webcam:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><circle cx="150" cy="80" r="40" fill="#1a1a2a" stroke="#e91e63" stroke-width="1.5"/><circle cx="150" cy="80" r="28" fill="#0a0a18" stroke="#334" stroke-width="1"/><circle cx="150" cy="80" r="16" fill="#121228"/><circle cx="150" cy="80" r="7" fill="#e91e63" opacity=".5"/><circle cx="158" cy="72" r="3" fill="rgba(255,255,255,.4)"/><circle cx="165" cy="62" r="3" fill="#e91e63" opacity=".8"/><rect x="140" y="118" width="20" height="16" rx="4" fill="#1a1a2a" stroke="#334" stroke-width="1"/><rect x="110" y="132" width="80" height="8" rx="4" fill="#1a1a2a" stroke="#334" stroke-width="1"/><text x="150" y="165" text-anchor="middle" fill="#e91e63" font-size="8" font-family="sans-serif">Full HD 1080p · Microfone</text></svg>`,
+
+  airfryer:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#1a0a0a"/><rect x="85" y="40" width="130" height="130" rx="15" fill="#2a1515" stroke="#ff6b00" stroke-width="1.5"/><rect x="90" y="45" width="120" height="120" rx="12" fill="#1f1010"/><circle cx="150" cy="105" r="45" fill="#2a1515" stroke="#ff6b00" stroke-width="1"/><circle cx="150" cy="105" r="35" fill="#1a0f0f"/><circle cx="150" cy="105" r="20" fill="#ff6b00" opacity=".15" stroke="#ff6b00" stroke-width="1"/><text x="150" y="110" text-anchor="middle" fill="#ff6b00" font-size="18">🍟</text><rect x="95" y="52" width="110" height="16" rx="5" fill="#1a0f0f" stroke="#ff6b00" stroke-width=".8"/><text x="150" y="64" text-anchor="middle" fill="#ff6b00" font-size="8" font-family="monospace">200°C · 5L</text><text x="150" y="178" text-anchor="middle" fill="#ff6b00" font-size="8" font-family="sans-serif">Air Fryer Digital · 8 Funções</text></svg>`,
+
+  chaleira:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><path d="M120 60 Q110 60 108 80 L105 150 Q105 165 150 167 Q195 165 195 150 L192 80 Q190 60 180 60 Z" fill="#1a1a2a" stroke="#00e5ff" stroke-width="1.5"/><path d="M190 90 Q215 85 215 100 Q215 115 190 110" stroke="#00e5ff" stroke-width="2" fill="none"/><path d="M120 55 L180 55" stroke="#00e5ff" stroke-width="3" stroke-linecap="round"/><rect x="138" y="48" width="24" height="10" rx="5" fill="#1a1a2a" stroke="#334" stroke-width="1"/><text x="152" y="95" text-anchor="middle" fill="#00e5ff" font-size="22" opacity=".2">💧</text><text x="150" y="175" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">Inox 1.7L · 60~100°C</text></svg>`,
+
+  mixer:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a1a0a"/><rect x="135" y="30" width="30" height="130" rx="10" fill="#152a15" stroke="#25D366" stroke-width="1.5"/><rect x="138" y="33" width="24" height="40" rx="8" fill="#0f1f0f"/><rect x="140" y="36" width="20" height="34" rx="6" fill="#122012"/><ellipse cx="150" cy="158" rx="25" ry="10" fill="#152a15" stroke="#25D366" stroke-width="1"/><path d="M140 158 L130 175 M160 158 L170 175" stroke="#25D366" stroke-width="2" stroke-linecap="round"/><circle cx="150" cy="95" r="8" fill="#0f1f0f" stroke="#25D366" stroke-width=".8"/><text x="150" y="99" text-anchor="middle" fill="#25D366" font-size="8">⚡</text><text x="150" y="190" text-anchor="middle" fill="#25D366" font-size="8" font-family="sans-serif">Mixer USB · Portátil</text></svg>`,
+
+  suporte_celular:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><rect x="115" y="40" width="70" height="110" rx="10" fill="#1a1a2a" stroke="#00e5ff" stroke-width="1.5"/><rect x="119" y="44" width="62" height="102" rx="8" fill="#12122a"/><rect x="122" y="47" width="56" height="96" rx="6" fill="#0a0a18"/><circle cx="150" cy="95" r="20" fill="#1a1a2a" stroke="#00e5ff" stroke-width="1"/><text x="150" y="100" text-anchor="middle" fill="#00e5ff" font-size="9">⚡W</text><path d="M100 150 L110 145 L150 155 L190 145 L200 150" stroke="#334" stroke-width="2" fill="none"/><circle cx="150" cy="160" r="6" fill="#1a1a2a" stroke="#00e5ff" stroke-width="1"/><text x="150" y="180" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">Magnético · Wireless 15W</text></svg>`,
+
+  wireless_charger:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0d0a0d"/><ellipse cx="150" cy="120" rx="70" ry="18" fill="#1a152a" stroke="#9c27b0" stroke-width="1.5"/><ellipse cx="150" cy="115" rx="60" ry="14" fill="#12102a"/><ellipse cx="150" cy="112" rx="45" ry="10" fill="#0a0a18" stroke="#9c27b0" stroke-width=".8"/><path d="M140 75 Q140 55 150 50 Q160 55 160 75" stroke="#9c27b0" stroke-width="2" fill="none" opacity=".5"/><path d="M130 80 Q128 52 150 44 Q172 52 170 80" stroke="#9c27b0" stroke-width="1.5" fill="none" opacity=".3"/><path d="M120 85 Q117 50 150 40 Q183 50 180 85" stroke="#9c27b0" stroke-width="1" fill="none" opacity=".2"/><text x="150" y="118" text-anchor="middle" fill="#9c27b0" font-size="8">⚡ 15W</text><text x="150" y="155" text-anchor="middle" fill="#9c27b0" font-size="8" font-family="sans-serif">MagSafe · iPhone & Android</text></svg>`,
+
+  cabo_magnetico:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><rect x="50" y="90" width="60" height="20" rx="10" fill="#1a1a2a" stroke="#00e5ff" stroke-width="1.5"/><rect x="55" y="94" width="50" height="12" rx="6" fill="#12122a"/><text x="80" y="103" text-anchor="middle" fill="#00e5ff" font-size="7">USB-A</text><path d="M110 100 Q150 80 190 100" stroke="#00e5ff" stroke-width="2" fill="none"/><circle cx="190" cy="100" r="10" fill="#1a1a2a" stroke="#ff6b00" stroke-width="1.5"/><circle cx="190" cy="100" r="5" fill="#ff6b00" opacity=".6"/><text x="190" y="130" text-anchor="middle" fill="#ff6b00" font-size="7">TYPE-C</text><text x="190" y="143" text-anchor="middle" fill="#7a9" font-size="7">Lightning</text><text x="190" y="156" text-anchor="middle" fill="#9c27b0" font-size="7">MicroUSB</text><text x="120" y="170" text-anchor="middle" fill="#00e5ff" font-size="8" font-family="sans-serif">Cabo Magnético 3 em 1</text></svg>`,
+
+  impressora_foto:`<svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="200" fill="#0a0a0d"/><rect x="80" y="55" width="140" height="90" rx="10" fill="#1a1a2a" stroke="#e91e63" stroke-width="1.5"/><rect x="85" y="60" width="130" height="80" rx="8" fill="#12122a"/><rect x="100" y="68" width="100" height="55" rx="5" fill="#0a0a18" stroke="#334" stroke-width=".8"/><rect x="104" y="72" width="45" height="45" rx="3" fill="#1a1a2a"/><text x="126" y="99" text-anchor="middle" fill="#e91e63" font-size="20" opacity=".5">📷</text><rect x="152" y="72" width="44" height="20" rx="3" fill="#1a1a2a"/><rect x="152" y="96" width="44" height="20" rx="3" fill="#1a1a2a"/><rect x="110" y="140" width="80" height="30" rx="3" fill="#fff" opacity=".08" stroke="#e91e63" stroke-width=".8"/><text x="150" y="182" text-anchor="middle" fill="#e91e63" font-size="8" font-family="sans-serif">Impressora Foto · Bluetooth</text></svg>`
+};
+
+const products = [
+  {cat:"Smartwatch", name:"Smartwatch Ultra Serie 9 – Tela AMOLED, GPS e Monitor Cardíaco", price:"R$ 189", old:"R$ 320", badge:"hot", svg:"smartwatch"},
+  {cat:"Smartwatch", name:"Smartwatch Feminino Elegante – Pulseira Colorida + Saúde", price:"R$ 149", old:"R$ 260", badge:"new", svg:"smartwatch"},
+  {cat:"Fone de Ouvido", name:"Fone TWS Bluetooth 5.3 com Case Carregador – 30h Bateria", price:"R$ 79", old:"R$ 140", badge:"hot", svg:"fone_tws"},
+  {cat:"Fone de Ouvido", name:"Headphone Over-Ear Bluetooth com Cancelamento de Ruído", price:"R$ 159", old:"R$ 280", badge:"", svg:"headphone"},
+  {cat:"Fone de Ouvido", name:"Fone Gamer RGB com Microfone – PC, PS4, Xbox, Celular", price:"R$ 99", old:"R$ 180", badge:"sale", svg:"fone_gamer"},
+  {cat:"Caixa de Som", name:"Caixinha Bluetooth Portátil À Prova D'água 10W – Praia", price:"R$ 89", old:"R$ 150", badge:"hot", svg:"caixa_small"},
+  {cat:"Caixa de Som", name:"Caixa de Som Bluetooth Grande 40W LED RGB para Festas", price:"R$ 249", old:"R$ 420", badge:"new", svg:"caixa_grande"},
+  {cat:"Caixa de Som", name:"Soundbar Home Theater 2.1 USB HDMI 60W Subwoofer", price:"R$ 349", old:"R$ 599", badge:"hot", svg:"soundbar"},
+  {cat:"Caixa de Som", name:"Mini Caixinha USB Recarregável com Rádio FM e Cartão SD", price:"R$ 49", old:"R$ 89", badge:"sale", svg:"caixa_usb"},
+  {cat:"Projetor 4K", name:"Mini Projetor 4K Wi-Fi Bluetooth 9500 Lúmens – Home Theater", price:"R$ 489", old:"R$ 799", badge:"hot", svg:"projetor"},
+  {cat:"Câmera de Segurança", name:"Câmera Interna Wi-Fi 360° Full HD – Visão Noturna + App", price:"R$ 129", old:"R$ 220", badge:"new", svg:"cam_interna"},
+  {cat:"Câmera de Segurança", name:"Câmera Externa IP66 À Prova D'água 4MP Visão Noturna", price:"R$ 189", old:"R$ 320", badge:"", svg:"cam_externa"},
+  {cat:"Câmera de Segurança", name:"Kit 4 Câmeras HD Segurança + DVR – Interno e Externo", price:"R$ 599", old:"R$ 999", badge:"hot", svg:"kit_cameras"},
+  {cat:"Power Bank", name:"Power Bank 20.000mAh Carga Rápida 22W – 3 Saídas USB", price:"R$ 119", old:"R$ 200", badge:"hot", svg:"powerbank"},
+  {cat:"Power Bank", name:"Power Bank Solar 10.000mAh À Prova D'água – Camping", price:"R$ 149", old:"R$ 250", badge:"new", svg:"powerbank_solar"},
+  {cat:"Memória", name:"Cartão de Memória 128GB MicroSD Classe 10 Ultra Speed", price:"R$ 49", old:"R$ 89", badge:"", svg:"cartao"},
+  {cat:"Memória", name:"Pen Drive 256GB USB 3.0 Dual Type-C Ultra Rápido", price:"R$ 59", old:"R$ 99", badge:"sale", svg:"pendrive"},
+  {cat:"Memória", name:"SSD Externo Portátil 1TB USB 3.2 – 500MB/s", price:"R$ 299", old:"R$ 499", badge:"new", svg:"ssd"},
+  {cat:"Saúde", name:"Aparelho de Pressão Digital Automático de Braço com Memória", price:"R$ 89", old:"R$ 149", badge:"", svg:"pressao"},
+  {cat:"Saúde", name:"Oxímetro de Pulso Digital Display OLED Colorido", price:"R$ 49", old:"R$ 89", badge:"sale", svg:"oximetro"},
+  {cat:"Saúde", name:"Balança Digital Corporal Vidro Temperado Slim", price:"R$ 79", old:"R$ 130", badge:"", svg:"balanca"},
+  {cat:"Higiene", name:"Escova de Dente Elétrica USB Recarregável 3 Modos", price:"R$ 59", old:"R$ 99", badge:"sale", svg:"escova"},
+  {cat:"Higiene", name:"Barbeador Elétrico Sem Fio USB Rotativo 3 Cabeças", price:"R$ 89", old:"R$ 150", badge:"hot", svg:"barbeador"},
+  {cat:"Casa Inteligente", name:"Robô Aspirador de Pó Wi-Fi com App e Mapeamento", price:"R$ 349", old:"R$ 599", badge:"hot", svg:"robo_aspirador"},
+  {cat:"Casa Inteligente", name:"Lâmpada Smart RGB Wi-Fi 16M Cores – Alexa e Google", price:"R$ 49", old:"R$ 85", badge:"new", svg:"lampada_smart"},
+  {cat:"Casa Inteligente", name:"Tomada Inteligente Wi-Fi + Medidor de Consumo – Alexa", price:"R$ 55", old:"R$ 99", badge:"", svg:"tomada_smart"},
+  {cat:"Casa", name:"Ferro de Passar Elétrico Antiaderente 1200W com Vapor", price:"R$ 79", old:"R$ 130", badge:"", svg:"ferro"},
+  {cat:"Casa", name:"Ferro a Vapor Vertical Portátil – Roupas e Cortinas", price:"R$ 99", old:"R$ 169", badge:"new", svg:"ferro_vapor"},
+  {cat:"Casa", name:"Ventilador USB Mini Portátil 3 Velocidades para Mesa", price:"R$ 39", old:"R$ 70", badge:"sale", svg:"ventilador_usb"},
+  {cat:"Casa", name:"Ventilador Torre USB Silencioso com Controle Remoto", price:"R$ 119", old:"R$ 200", badge:"", svg:"ventilador_torre"},
+  {cat:"TV & Antena", name:"Controle Remoto Universal para TV – Todas as Marcas", price:"R$ 29", old:"R$ 55", badge:"sale", svg:"controle_tv"},
+  {cat:"TV & Antena", name:"Controle para TV Box Android – Fire Stick / Roku / MXQ", price:"R$ 35", old:"R$ 65", badge:"", svg:"controle_tvbox"},
+  {cat:"TV & Antena", name:"Antena TV Digital Interna Full HD 4K Amplificada 50dB", price:"R$ 59", old:"R$ 100", badge:"hot", svg:"antena"},
+  {cat:"TV & Antena", name:"TV Box 4K Android 11 – 4GB RAM + 64GB Wi-Fi 6", price:"R$ 219", old:"R$ 370", badge:"new", svg:"tvbox"},
+  {cat:"Pet", name:"Cama Pet Luxo com Almofada Lavável – Tamanhos P/M/G", price:"R$ 89", old:"R$ 150", badge:"new", svg:"cama_pet"},
+  {cat:"Pet", name:"Bebedouro Elétrico Pet Filtro USB Circulação 2L", price:"R$ 79", old:"R$ 130", badge:"hot", svg:"bebedouro_pet"},
+  {cat:"Ferramentas", name:"Furadeira Mini USB Recarregável com Kit 25 Brocas", price:"R$ 69", old:"R$ 120", badge:"", svg:"furadeira"},
+  {cat:"Ferramentas", name:"Parafusadeira Elétrica Sem Fio USB-C com Maleta", price:"R$ 129", old:"R$ 220", badge:"hot", svg:"parafusadeira"},
+  {cat:"Informática", name:"Mouse Sem Fio Silencioso 2.4GHz USB-C Recarregável", price:"R$ 55", old:"R$ 90", badge:"", svg:"mouse"},
+  {cat:"Informática", name:"Teclado Bluetooth Slim Recarregável – Celular, Tablet e PC", price:"R$ 89", old:"R$ 149", badge:"sale", svg:"teclado"},
+  {cat:"Informática", name:"Webcam Full HD 1080p com Microfone – USB Plug & Play", price:"R$ 99", old:"R$ 179", badge:"new", svg:"webcam"},
+  {cat:"Cozinha", name:"Air Fryer Digital 5L com Timer e 8 Funções Automáticas", price:"R$ 249", old:"R$ 420", badge:"hot", svg:"airfryer"},
+  {cat:"Cozinha", name:"Chaleira Elétrica Inox 1.7L Temperatura Variável 60~100°C", price:"R$ 119", old:"R$ 200", badge:"", svg:"chaleira"},
+  {cat:"Cozinha", name:"Mixer Portátil Recarregável USB para Vitaminas e Sucos", price:"R$ 69", old:"R$ 120", badge:"new", svg:"mixer"},
+  {cat:"Acessórios", name:"Suporte Celular Carro Magnético com Carregador Wireless 15W", price:"R$ 59", old:"R$ 100", badge:"hot", svg:"suporte_celular"},
+  {cat:"Acessórios", name:"Carregador Wireless 15W MagSafe – iPhone & Android", price:"R$ 49", old:"R$ 89", badge:"", svg:"wireless_charger"},
+  {cat:"Acessórios", name:"Cabo Magnético 3 em 1 – USB-C, Lightning, MicroUSB", price:"R$ 39", old:"R$ 70", badge:"sale", svg:"cabo_magnetico"},
+  {cat:"Acessórios", name:"Mini Impressora de Foto Portátil Bluetooth – Sem Tinta", price:"R$ 179", old:"R$ 290", badge:"new", svg:"impressora_foto"},
+];
+
+function olb(i){
+  const p=products[i];
+  document.getElementById('lb-img').innerHTML=svgs[p.svg]||'';
+  document.getElementById('lb-nm').textContent=p.name;
+  document.getElementById('lb-pr').textContent=p.price;
+  document.getElementById('lb-wa').href=wa(`Olá! Vim pelo site Careca Store e tenho interesse em: ${p.name} (${p.price}). Ainda tem disponível?`);
+  document.getElementById('lb').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function clb(){
+  document.getElementById('lb').classList.remove('on');
+  document.body.style.overflow='';
+}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target===document.getElementById('lb'))clb()});
+
+const featuredVideos = [
+  {tag:'Smartwatch', name:'Vídeo Promo – Smartwatch Ultra', file:'assets/videos/smartwatch-ultra.mp4', desc:'Teaser curto e dinâmico para usar no site, status ou anúncio.'},
+  {tag:'Caixa de Som', name:'Vídeo Promo – Caixa Bluetooth 40W', file:'assets/videos/caixa-bluetooth-40w.mp4', desc:'Vídeo com foco em impacto visual para produto de áudio.'},
+  {tag:'Projetor 4K', name:'Vídeo Promo – Mini Projetor 4K', file:'assets/videos/mini-projetor-4k.mp4', desc:'Apresentação rápida para destacar tecnologia e home theater.'},
+  {tag:'Segurança', name:'Vídeo Promo – Câmera Wi‑Fi 360°', file:'assets/videos/camera-wifi-360.mp4', desc:'Teaser promocional para segurança residencial e app mobile.'}
+];
+
+function popularCategorias(){
+  const select=document.getElementById('filtro-cat');
+  [...new Set(products.map(p=>p.cat))].sort((a,b)=>a.localeCompare(b,'pt-BR')).forEach(cat=>{
+    const op=document.createElement('option');
+    op.value=cat;
+    op.textContent=cat;
+    select.appendChild(op);
+  });
+}
+
+function cardProduto(p,i,bm){
+  const c=document.createElement('div');
+  c.className='pc';
+  c.innerHTML=`
+    ${p.badge?`<div class="bdg ${p.badge}">${bm[p.badge]}</div>`:''}
+    <div class="pi" onclick="olb(${i})">
+      ${svgs[p.svg]||`<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#1a1a2a"/><text x="150" y="105" text-anchor="middle" fill="#00e5ff" font-size="40">🖥️</text></svg>`}
+      <div class="pi-ov"><span>🔍 Ver Foto</span></div>
+    </div>
+    <div class="pinfo">
+      <div class="pct">${p.cat}</div>
+      <div class="pnm">${p.name}</div>
+      <div class="ppr"><span class="prn">${p.price}</span><span class="prw">${p.old}</span></div>
+      <a href="${wa(`Olá! Vim pelo site Careca Store e tenho interesse em: ${p.name} (${p.price}). Ainda tem disponível?`)}" class="wb" target="_blank" rel="noopener noreferrer">💬 Comprar pelo WhatsApp</a>
+    </div>`;
+  return c;
+}
+
+function renderProducts(){
+  const g=document.getElementById('pgrid');
+  const busca=(document.getElementById('busca').value||'').trim().toLowerCase();
+  const cat=document.getElementById('filtro-cat').value;
+  const bm={hot:'🔥 HOT',new:'✨ NOVO',sale:'🏷 OFERTA'};
+  g.innerHTML='';
+  const filtrados=products.filter(p=>{
+    const alvo=`${p.cat} ${p.name} ${p.price}`.toLowerCase();
+    const matchBusca=!busca || alvo.includes(busca);
+    const matchCat=!cat || p.cat===cat;
+    return matchBusca && matchCat;
+  });
+  document.getElementById('contador').textContent=`${filtrados.length} produto${filtrados.length===1?'':'s'}`;
+  if(!filtrados.length){
+    g.innerHTML='<div class="empty">Nenhum produto encontrado com esse filtro.</div>';
+    return;
+  }
+  filtrados.forEach(p=>g.appendChild(cardProduto(p, products.indexOf(p), bm)));
+}
+
+function renderVideos(){
+  const g=document.getElementById('vgrid');
+  featuredVideos.forEach(v=>{
+    const c=document.createElement('div');
+    c.className='vc';
+    c.innerHTML=`
+      <video controls muted playsinline preload="metadata">
+        <source src="${v.file}" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+      <div class="vinfo">
+        <div class="vtag">${v.tag}</div>
+        <div class="vnm">${v.name}</div>
+        <div class="vds">${v.desc}</div>
+      </div>`;
+    g.appendChild(c);
+  });
+}
+
+popularCategorias();
+renderProducts();
+renderVideos();
+document.getElementById('busca').addEventListener('input', renderProducts);
+document.getElementById('filtro-cat').addEventListener('change', renderProducts);
+</script>
+</body>
+</html>

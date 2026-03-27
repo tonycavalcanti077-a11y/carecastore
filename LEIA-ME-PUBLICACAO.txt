@@ -1,0 +1,32 @@
+CARECA STORE - PACOTE PRONTO PARA PUBLICAR
+
+ARQUIVOS PRINCIPAIS
+- index.html
+- assets/videos/*.mp4
+
+COMO COLOCAR NO AR
+1. Entre na hospedagem/cPanel do seu domínio.
+2. Abra a pasta public_html.
+3. Envie TODO o conteúdo deste pacote para dentro de public_html.
+4. Confirme que o arquivo principal está com o nome index.html.
+5. Acesse seu domínio e faça um teste final no celular e no computador.
+
+O QUE JÁ FOI DEIXADO PRONTO
+- Loja em uma única página.
+- Produtos carregando por JavaScript.
+- Busca por nome/categoria.
+- Filtro por categoria.
+- Lightbox para ampliar o produto.
+- Botões de compra no WhatsApp.
+- Seção com vídeos promocionais já incluída.
+- Meta description básica para SEO.
+
+IMPORTANTE
+- O número de WhatsApp atual no site é: +55 21 96507-7799.
+- Os vídeos incluídos são teasers promocionais baseados nas artes dos produtos da vitrine.
+- Para usar vídeos reais dos seus produtos, depois basta substituir os MP4 dentro de assets/videos.
+
+SE VOCÊ QUISER PERSONALIZAR DEPOIS
+- Trocar número do WhatsApp: procurar por 5521965077799 no index.html.
+- Trocar nome da loja: procurar por CARECA STORE no index.html.
+- Trocar textos dos produtos: procurar pela lista const products no index.html.

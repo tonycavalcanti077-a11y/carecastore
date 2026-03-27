@@ -1,0 +1,14 @@
+RELATORIO DE TESTES - CARECA STORE
+
+VALIDACOES FEITAS
+1. Estrutura HTML carregando localmente.
+2. Arquivo principal index.html respondendo com HTTP 200.
+3. Videos locais respondendo com HTTP 200.
+4. Script JavaScript revisado e com sintaxe valida.
+5. Links internos de navegacao conferidos.
+6. Produtos e SVGs conferidos sem referencias faltando.
+
+OBSERVACOES
+- O site e uma vitrine estatica com compra via WhatsApp.
+- Nao existe checkout interno, painel administrativo ou banco de dados.
+- Para publicar em dominio .com.br, basta hospedagem comum com HTML.
